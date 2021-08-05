@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homeworks",
+  "info": {
+    "name": "Homeworks",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "homeworkImage": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "description": {
+      "type": "string"
+    },
+    "module": {
+      "via": "homeworks",
+      "model": "modules"
+    }
+  }
+}

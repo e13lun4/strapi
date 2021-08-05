@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/homeworks",
+      "handler": "homeworks.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/homeworks/count",
+      "handler": "homeworks.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/homeworks/:id",
+      "handler": "homeworks.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/homeworks",
+      "handler": "homeworks.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/homeworks/:id",
+      "handler": "homeworks.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/homeworks/:id",
+      "handler": "homeworks.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "Course",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "modules": {
+      "via": "course",
+      "collection": "modules"
+    },
+    "group": {
+      "model": "groups",
+      "via": "courses"
+    }
+  }
+}

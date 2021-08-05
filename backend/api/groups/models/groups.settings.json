@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "groups",
+  "info": {
+    "name": "Groups"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "courses": {
+      "via": "group",
+      "collection": "course"
+    }
+  }
+}

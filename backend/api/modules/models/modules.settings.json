@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modules",
+  "info": {
+    "name": "Modules",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "course": {
+      "via": "modules",
+      "model": "course"
+    },
+    "homeworks": {
+      "via": "module",
+      "collection": "homeworks"
+    },
+    "lessons": {
+      "via": "module",
+      "collection": "lesson"
+    },
+    "theories": {
+      "collection": "theory",
+      "via": "module"
+    }
+  }
+}
