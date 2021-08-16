@@ -3,18 +3,17 @@ import PropTypes from 'prop-types'
 import { findIndex, get, map, replace, set } from 'lodash'
 import { Link } from 'react-router-dom'
 
-import Button from '../../components/Button'
-import FormDivider from '../../components/FormDivider'
-import Input from '../../components/InputsIndex'
-import Logo from '../../assets/logo_strapi.png'
-import SocialLink from '../../components/SocialLink'
+import Button from '../../components/Button/Button'
+// import FormDivider from '../../components/FormDivider/FormDivider'
+import Input from '../../containers/../components/Inputs/InputsIndex/InputsIndex'
+// import SocialLink from '../../components/SocialLink/SocialLink'
 
 // Utils
 import auth from '../../utils/auth'
 import request from '../../utils/request'
 
 import form from './forms.json'
-import './styles.css'
+import './AuthPage.css'
 
 class AuthPage extends React.Component {
   state = { value: {}, errors: [], didCheckErrors: false }
@@ -85,7 +84,7 @@ class AuthPage extends React.Component {
         const errors = [
           { name: 'identifier', errors: [err.response.payload.message] },
         ]
-        this.setState({ didCheckErrors: !this.state.didCheckErrors, errors })
+        this.setState([{ didCheckErrors: !this.state.didCheckErrors, errors }])
       })
   }
 
@@ -135,7 +134,7 @@ class AuthPage extends React.Component {
         ? { marginTop: '3.2rem' }
         : { marginTop: '.9rem' }
     const inputs = get(form, ['views', this.props.match.params.authType], [])
-    const providers = ['facebook', 'github', 'google', 'twitter'] // To remove a provider from the list just delete it from this array...
+    // const providers = ['facebook', 'github', 'google', 'twitter'] // To remove a provider from the list just delete it from this array...
 
     return (
       <div className="authPage">
@@ -144,7 +143,7 @@ class AuthPage extends React.Component {
             {this.props.match.params.authType === 'register' ? (
               <span>Welcome !</span>
             ) : (
-              <img />
+              ''
             )}
           </div>
           <div className="headerDescription">
@@ -158,12 +157,12 @@ class AuthPage extends React.Component {
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-12">
-                  {providers.map((provider) => (
+                  {/* {providers.map((provider) => (
                     <SocialLink provider={provider} key={provider} />
-                  ))}
+                  ))} */}
                 </div>
               </div>
-              <FormDivider />
+              {/* <FormDivider /> */}
               <form onSubmit={this.handleSubmit}>
                 <div className="row" style={{ textAlign: 'start' }}>
                   {map(inputs, (input, key) => (

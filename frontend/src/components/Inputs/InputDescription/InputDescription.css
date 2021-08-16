@@ -1,0 +1,9 @@
+.inputDescriptionContainer {
+  width: 200%;
+  margin-top: 13px;
+  line-height: 12px;
+}
+small {
+  color: #9ea7b8;
+  font-size: 12px;
+}
