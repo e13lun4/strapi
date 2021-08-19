@@ -3,7 +3,7 @@
     "forgot-password": [
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Enter your email",
+        "label": "Введите свою почту",
         "name": "email",
         "type": "email",
         "placeholder": ""
@@ -12,20 +12,21 @@
     "login": [
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Username",
+        "label": "Имя пользователя или почта",
         "name": "identifier",
         "type": "text",
         "placeholder": ""
       },
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Password",
+        "label": "Пароль",
         "name": "password",
-        "type": "password"
+        "type": "password",
+        "placeholder": ""
       },
       {
         "customBootstrapClass": "col-md-6",
-        "label": "Remember me",
+        "label": "Запомнить меня",
         "name": "rememberMe",
         "type": "checkbox"
       }
@@ -33,28 +34,30 @@
     "register": [
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Username",
+        "label": "Имя пользователя",
         "name": "username",
         "type": "text",
-        "placeholder": "Bob"
+        "placeholder": ""
       },
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Password",
+        "label": "Пароль",
         "name": "password",
-        "type": "password"
+        "type": "password",
+        "placeholder": ""
       },
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Confirm Password",
+        "label": "Подтвердите пароль",
         "name": "confirmPassword",
-        "type": "password"
+        "type": "password",
+        "placeholder": ""
       },
       {
         "customBootstrapClass": "col-md-12",
-        "label": "Email",
+        "label": "Почта",
         "name": "email",
-        "placeholder": "johndoe@gmail.com",
+        "placeholder": "",
         "type": "email"
       }
     ],
@@ -63,13 +66,13 @@
         "customBootstrapClass": "col-md-12",
         "name": "password",
         "type": "password",
-        "label": "Password"
+        "label": "Пароль"
       },
       {
         "customBootstrapClass": "col-md-12",
         "name": "passwordConfirmation",
         "type": "password",
-        "label": "Confirm Password"
+        "label": "Подтвердите пароль"
       }
     ]
   },

@@ -1,4 +1,6 @@
 .inputCheckbox {
+  text-align: center;
+  justify-content: center;
   margin-bottom: 0;
   font-weight: 400;
 }

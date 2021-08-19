@@ -18,10 +18,11 @@
 }
 
 .addonEmail::after {
+  padding-right: 8px;
   content: '@';
   display: inline-table;
   color: #b3b5b9;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 900;
 }
 
@@ -47,6 +48,7 @@
 }
 
 .inputEmail {
+  width: 350px;
   height: 34px;
   margin-top: 9px;
   padding-left: 10px;

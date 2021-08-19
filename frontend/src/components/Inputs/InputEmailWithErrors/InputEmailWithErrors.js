@@ -164,7 +164,7 @@ InputEmailWithErrors.defaultProps = {
   inputStyle: {},
   label: '',
   labelClassName: '',
-  labelStyle: {},
+  labelStyle: { marginTop: '-10px' },
   noErrorsDescription: false,
   placeholder: '',
   style: {},

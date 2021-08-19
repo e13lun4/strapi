@@ -8,7 +8,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div style={{ marginTop: '15%' }}>
-        <h1>You're now logged in!!!</h1>
+        <h1>Вы вошли</h1>
         <div style={{ marginTop: '50px' }}>
           <Button
             primary
@@ -17,7 +17,7 @@ class HomePage extends React.Component {
               this.props.history.push('/auth/login')
             }}
           >
-            Logout
+            Выйти
           </Button>
         </div>
       </div>

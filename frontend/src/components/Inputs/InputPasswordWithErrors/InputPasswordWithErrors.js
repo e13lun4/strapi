@@ -81,7 +81,6 @@ class InputPasswordWithErrors extends React.Component {
     const handleBlur = isFunction(this.props.onBlur)
       ? this.props.onBlur
       : this.handleBlur
-
     return (
       <div
         className={cn(
@@ -146,7 +145,7 @@ InputPasswordWithErrors.defaultProps = {
   inputStyle: {},
   label: '',
   labelClassName: '',
-  labelStyle: {},
+  labelStyle: { marginTop: '-10px' },
   placeholder: '',
   style: {},
   tabIndex: '0',

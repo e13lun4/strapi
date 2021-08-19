@@ -114,16 +114,16 @@ class AuthPage extends React.Component {
     if (this.props.match.params.authType === 'login') {
       return (
         <div>
-          <Link to="/auth/forgot-password">Forgot Password</Link>
-          &nbsp;or&nbsp;
-          <Link to="/auth/register">register</Link>
+          <Link to="/auth/forgot-password">Забыл(а) пароль</Link>
+          &nbsp;или&nbsp;
+          <Link to="/auth/register">Зарегистрироваться</Link>
         </div>
       )
     }
 
     return (
       <div>
-        <Link to="/auth/login">Ready to signin</Link>
+        <Link to="/auth/login">Готов к входу</Link>
       </div>
     )
   }
@@ -141,14 +141,14 @@ class AuthPage extends React.Component {
         <div className="wrapper">
           <div className="headerContainer">
             {this.props.match.params.authType === 'register' ? (
-              <span>Welcome !</span>
+              <span>Здравствуйте</span>
             ) : (
               ''
             )}
           </div>
           <div className="headerDescription">
             {this.props.match.params.authType === 'register' ? (
-              <span>Please register to access the app.</span>
+              <span>Зарегистрируйтесь, чтобы войти</span>
             ) : (
               ''
             )}
@@ -190,7 +190,7 @@ class AuthPage extends React.Component {
                   ))}
                   <div className="col-md-12 buttonContainer">
                     <Button
-                      label="Submit"
+                      label="Войти"
                       style={{ width: '100%' }}
                       primary
                       type="submit"

@@ -1,8 +1,10 @@
 .inputTextWithErrors {
+  justify-content: center;
   min-width: 200px;
   margin-bottom: 15px;
   font-size: 13px;
-  text-align: start;
+  text-align: center;
+  /* text-align: start; */
 }
 
 .spacer {

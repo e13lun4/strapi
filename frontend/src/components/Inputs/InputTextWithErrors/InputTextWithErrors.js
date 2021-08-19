@@ -97,7 +97,7 @@ class InputTextWithErrors extends React.Component {
       spacer = <div />
     }
 
-    const lStyle = !isEmpty(labelStyle) ? labelStyle : { marginTop: '3px' }
+    const lStyle = !isEmpty(labelStyle) ? labelStyle : { marginTop: '-10px' }
 
     return (
       <div

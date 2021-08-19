@@ -1,4 +1,6 @@
 .label {
+  position: absolute;
+  justify-content: center;
   margin-bottom: 0;
   font-weight: 500;
 }
