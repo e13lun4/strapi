@@ -10,7 +10,7 @@ const ModulesCard = ({ module, urlId }) => {
           <h5 className="card-title">{module.title}</h5>
           <p className="card-text">{module.description}</p>
           <Link
-            to={`/course/${urlId}/modules/${module.id}/lth`}
+            to={`/course/${urlId}/module/${module.id}/lth`}
             className="btn btn-primary"
           >
             Перейти в модуль

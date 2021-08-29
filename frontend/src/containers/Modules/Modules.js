@@ -25,7 +25,7 @@ const Modules = () => {
         }
       )
       .then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         setModules(res.data)
         setIsLoading(false)
       })

@@ -8,6 +8,7 @@ import auth from '../../utils/auth'
 import HomeStudent from './HomeSudent'
 import HomeParent from './HomeParent'
 import HomeCurator from './HomeCurator'
+import HomeUser from './HomeUser'
 
 class HomePage extends React.Component {
   render() {
@@ -52,11 +53,29 @@ class HomePage extends React.Component {
           </div>
         </div>
       )
-    } else {
+    } else if (getRole.role.type === 'curator') {
       return (
         <div style={{ marginTop: '15%' }}>
           <HomeCurator />
           {/* <h1>Вы вошли, как куратор</h1> */}
+          <div style={{ marginTop: '50px' }}>
+            <Button
+              primary
+              onClick={() => {
+                auth.clearAppStorage()
+                this.props.history.push('/auth/login')
+              }}
+            >
+              Выйти
+            </Button>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div style={{ marginTop: '15%' }}>
+          <HomeUser />
+          {/* <h1>Вы вошли, как пользователь</h1> */}
           <div style={{ marginTop: '50px' }}>
             <Button
               primary
