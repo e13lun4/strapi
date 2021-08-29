@@ -30,8 +30,7 @@ class InputPasswordWithErrors extends React.Component {
       this.setState({ errors })
     }
   }
-
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     // Show required error if the input's value is received after the compo is mounted
     if (!isEmpty(nextProps.value) && !this.state.hasInitialValue) {
       this.setState({ hasInitialValue: true })
@@ -44,6 +43,19 @@ class InputPasswordWithErrors extends React.Component {
       this.setState({ errors })
     }
   }
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   // Show required error if the input's value is received after the compo is mounted
+  //   if (!isEmpty(nextProps.value) && !this.state.hasInitialValue) {
+  //     this.setState({ hasInitialValue: true })
+  //   }
+
+  //   // Check if errors have been updated during validations
+  //   if (nextProps.didCheckErrors !== this.props.didCheckErrors) {
+  //     // Remove from the state the errors that have already been set
+  //     const errors = isEmpty(nextProps.errors) ? [] : nextProps.errors
+  //     this.setState({ errors })
+  //   }
+  // }
 
   /**
    * Set the errors depending on the validations given to the input
@@ -145,7 +157,7 @@ InputPasswordWithErrors.defaultProps = {
   inputStyle: {},
   label: '',
   labelClassName: '',
-  labelStyle: { marginTop: '-10px' },
+  labelStyle: { marginTop: '-10px', marginLeft: '-40px' },
   placeholder: '',
   style: {},
   tabIndex: '0',

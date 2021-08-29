@@ -11,14 +11,19 @@ import PrivateRoute from '../src/containers/PrivateRoute/PrivateRoute'
 
 // Design
 import './App.css'
+import Courses from './containers/Courses/Courses'
+import Modules from './containers/Modules/Modules'
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="container">
         <Switch>
           {/* A user can't go to the HomePage if is not authenticated */}
           <PrivateRoute path="/" component={HomePage} exact />
+          <PrivateRoute path="/courses/:id/modules" component={Modules} />
+          <PrivateRoute path="/course/:id/modules/:id/lth" />
+          <PrivateRoute path="/courses" component={Courses} />
           <Route path="/auth/:authType/:id?" component={AuthPage} />
           <Route path="" component={NotFoundPage} />
         </Switch>

@@ -19,12 +19,13 @@
       "type": "string"
     },
     "modules": {
-      "via": "course",
-      "collection": "modules"
+      "via": "courses",
+      "collection": "modules",
+      "dominant": true
     },
     "group": {
-      "model": "groups",
-      "via": "courses"
+      "via": "courses",
+      "model": "groups"
     }
   }
 }

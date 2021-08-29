@@ -20,8 +20,7 @@ class InputCheckboxWithErrors extends React.Component {
       this.setState({ errors })
     }
   }
-
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     // Check if errors have been updated during validations
     if (nextProps.didCheckErrors !== this.props.didCheckErrors) {
       // Remove from the state the errors that have already been set
@@ -29,6 +28,14 @@ class InputCheckboxWithErrors extends React.Component {
       this.setState({ errors })
     }
   }
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   // Check if errors have been updated during validations
+  //   if (nextProps.didCheckErrors !== this.props.didCheckErrors) {
+  //     // Remove from the state the errors that have already been set
+  //     const errors = isEmpty(nextProps.errors) ? [] : nextProps.errors
+  //     this.setState({ errors })
+  //   }
+  // }
 
   render() {
     const {

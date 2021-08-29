@@ -21,12 +21,16 @@ class AuthPage extends React.Component {
   componentDidMount() {
     this.generateForm(this.props)
   }
-
-  componentWillReceiveProps(nextProps) {
+  componentDidUpdate(nextProps) {
     if (nextProps.match.params.authType !== this.props.match.params.authType) {
       this.generateForm(nextProps)
     }
   }
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   if (nextProps.match.params.authType !== this.props.match.params.authType) {
+  //     this.generateForm(nextProps)
+  //   }
+  // }
 
   getRequestURL = () => {
     let requestURL

@@ -18,10 +18,6 @@
     "description": {
       "type": "string"
     },
-    "course": {
-      "via": "modules",
-      "model": "course"
-    },
     "homeworks": {
       "via": "module",
       "collection": "homeworks"
@@ -33,6 +29,10 @@
     "theories": {
       "collection": "theory",
       "via": "module"
+    },
+    "courses": {
+      "via": "modules",
+      "collection": "course"
     }
   }
 }
