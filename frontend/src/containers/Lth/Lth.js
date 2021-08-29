@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import axios from 'axios'
 import auth from '../../utils/auth'
-import LessonsCard from '../../components/Card/LthCards/LessonsCard'
-import TheoriesCard from '../../components/Card/LthCards/TheoriesCard'
-import HomeworksCard from '../../components/Card/LthCards/Homeworks'
+import LessonsCard from '../../components/Card/LthCards/LessonsCard/LessonsCard'
+import TheoriesCard from '../../components/Card/LthCards/TheoriesCard/TheoriesCard'
+import HomeworksCard from '../../components/Card/LthCards/HomeworksCard/HomeworksCard'
 
 const Lth = () => {
   const [isLoadingLessons, setIsLoadingLessons] = useState(true)
@@ -91,7 +91,7 @@ const Lth = () => {
           )}
           <hr />
           {isLoadingTheories ? (
-            <h2>Загрузка...</h2>
+            <h2>...</h2>
           ) : (
             theories.map((theory) => (
               <TheoriesCard
@@ -104,7 +104,7 @@ const Lth = () => {
           )}
           <hr />
           {isLoadingHomeworks ? (
-            <h2>Загрузка...</h2>
+            <h2>...</h2>
           ) : (
             homeworks.map((homework) => (
               <HomeworksCard

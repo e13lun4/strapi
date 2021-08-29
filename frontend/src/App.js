@@ -14,6 +14,9 @@ import './App.css'
 import Courses from './containers/Courses/Courses'
 import Modules from './containers/Modules/Modules'
 import Lth from './containers/Lth/Lth'
+import Lesson from './containers/Lth/Lesson/Lesson'
+import Theory from './containers/Lth/Theory/Theory'
+import Homework from './containers/Lth/Homework/Homework'
 
 function App() {
   return (
@@ -23,6 +26,18 @@ function App() {
           {/* A user can't go to the HomePage if is not authenticated */}
           <PrivateRoute path="/" component={HomePage} exact />
           <PrivateRoute path="/course/:id/modules" component={Modules} />
+          <PrivateRoute
+            path="/course/:id/module/:id/lth/lesson/:id"
+            component={Lesson}
+          />
+          <PrivateRoute
+            path="/course/:id/module/:id/lth/theory/:id"
+            component={Theory}
+          />
+          <PrivateRoute
+            path="/course/:id/module/:id/lth/homework/:id"
+            component={Homework}
+          />
           <PrivateRoute path="/course/:id/module/:id/lth" component={Lth} />
           <PrivateRoute path="/courses" component={Courses} />
           <Route path="/auth/:authType/:id?" component={AuthPage} />
