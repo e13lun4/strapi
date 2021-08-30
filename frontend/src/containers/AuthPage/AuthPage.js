@@ -119,7 +119,7 @@ class AuthPage extends React.Component {
       return (
         <div>
           {/* <Link to="/auth/forgot-password">Забыл(а) пароль</Link>
-          &nbsp;или */}
+          &nbsp;или  */}
           &nbsp;
           <Link to="/auth/register">Зарегистрироваться</Link>
         </div>

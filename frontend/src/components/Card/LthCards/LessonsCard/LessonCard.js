@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactMarkdown from 'react-markdown'
 
 const LessonCard = ({ lesson }) => {
   return (
@@ -6,7 +7,7 @@ const LessonCard = ({ lesson }) => {
       <div className="card">
         <div className="card-header">Урок: {lesson.title}</div>
         <div className="card-body">
-          <p className="card-text">{lesson.content}</p>
+          <ReactMarkdown className="card-text">{lesson.content}</ReactMarkdown>
         </div>
       </div>
     </div>
