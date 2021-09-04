@@ -1,7 +1,9 @@
 import React from 'react'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { findIndex, get, map, replace, set } from 'lodash'
 import { Link } from 'react-router-dom'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
 
 import Button from '../../components/Button/Button'
 // import FormDivider from '../../components/FormDivider/FormDivider'
@@ -83,6 +85,11 @@ class AuthPage extends React.Component {
         this.redirectUser()
       })
       .catch((err) => {
+        if (err) {
+          alert(
+            'Попробуйте снова или проверьте правильность имени пользователя или почты и пароля.'
+          )
+        }
         // TODO handle errors for other views
         // This is just an example
         const errors = [
@@ -120,15 +127,15 @@ class AuthPage extends React.Component {
         <div>
           {/* <Link to="/auth/forgot-password">Забыл(а) пароль</Link>
           &nbsp;или  */}
-          &nbsp;
-          <Link to="/auth/register">Зарегистрироваться</Link>
+          {/* &nbsp;
+          <Link to="/auth/register">Зарегистрироваться</Link> */}
         </div>
       )
     }
 
     return (
       <div>
-        <Link to="/auth/login">Готов к входу</Link>
+        <Link to="/auth/login">Перейти к входу...</Link>
       </div>
     )
   }
@@ -140,75 +147,90 @@ class AuthPage extends React.Component {
         : { marginTop: '.9rem' }
     const inputs = get(form, ['views', this.props.match.params.authType], [])
     // const providers = ['facebook', 'github', 'google', 'twitter'] // To remove a provider from the list just delete it from this array...
-
-    return (
-      <div className="authPage">
-        <div className="wrapper">
-          <div className="headerContainer">
-            {this.props.match.params.authType === 'register' ? (
-              <span>Здравствуйте</span>
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="headerDescription">
-            {this.props.match.params.authType === 'register' ? (
-              <span>Зарегистрируйтесь, чтобы войти</span>
-            ) : (
-              ''
-            )}
-          </div>
-          <div className="formContainer" style={divStyle}>
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-md-12">
-                  {/* {providers.map((provider) => (
+    if (this.props.match.params.authType !== 'login')
+      return (
+        <>
+          <BrowserRouter>
+            <Switch>
+              <Route path="" component={NotFoundPage} />
+            </Switch>
+          </BrowserRouter>
+          <div className="linkContainer">{this.renderLink()}</div>
+        </>
+      )
+    else {
+      return (
+        <div className="authPage">
+          <div className="wrapper">
+            <div className="headerContainer">
+              {this.props.match.params.authType === 'register' ? (
+                <span>Здравствуйте</span>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className="headerDescription">
+              {this.props.match.params.authType === 'register' ? (
+                <span>Зарегистрируйтесь, чтобы войти</span>
+              ) : (
+                ''
+              )}
+            </div>
+            <div className="formContainer" style={divStyle}>
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-md-12">
+                    {/* {providers.map((provider) => (
                     <SocialLink provider={provider} key={provider} />
                   ))} */}
-                </div>
-              </div>
-              {/* <FormDivider /> */}
-              <form onSubmit={this.handleSubmit}>
-                <div className="row" style={{ textAlign: 'start' }}>
-                  {map(inputs, (input, key) => (
-                    <Input
-                      autoFocus={key === 0}
-                      customBootstrapClass={get(input, 'customBootstrapClass')}
-                      didCheckErrors={this.state.didCheckErrors}
-                      errors={get(
-                        this.state.errors,
-                        [
-                          findIndex(this.state.errors, ['name', input.name]),
-                          'errors',
-                        ],
-                        []
-                      )}
-                      key={get(input, 'name')}
-                      label={get(input, 'label')}
-                      name={get(input, 'name')}
-                      onChange={this.handleChange}
-                      placeholder={get(input, 'placeholder')}
-                      type={get(input, 'type')}
-                      validations={{ required: true }}
-                      value={get(this.state.value, get(input, 'name'), '')}
-                    />
-                  ))}
-                  <div className="col-md-12 buttonContainer">
-                    <Button
-                      label="Войти"
-                      style={{ width: '100%' }}
-                      primary
-                      type="submit"
-                    />
                   </div>
                 </div>
-              </form>
+                {/* <FormDivider /> */}
+                <form onSubmit={this.handleSubmit}>
+                  <div className="row" style={{ textAlign: 'start' }}>
+                    {map(inputs, (input, key) => (
+                      <Input
+                        autoFocus={key === 0}
+                        customBootstrapClass={get(
+                          input,
+                          'customBootstrapClass'
+                        )}
+                        didCheckErrors={this.state.didCheckErrors}
+                        errors={get(
+                          this.state.errors,
+                          [
+                            findIndex(this.state.errors, ['name', input.name]),
+                            'errors',
+                          ],
+                          []
+                        )}
+                        key={get(input, 'name')}
+                        label={get(input, 'label')}
+                        name={get(input, 'name')}
+                        onChange={this.handleChange}
+                        placeholder={get(input, 'placeholder')}
+                        type={get(input, 'type')}
+                        validations={{ required: true }}
+                        value={get(this.state.value, get(input, 'name'), '')}
+                      />
+                    ))}
+                    <div className="col-md-12 buttonContainer">
+                      <Button
+                        label="Войти"
+                        style={{ width: '100%' }}
+                        primary
+                        type="submit"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
+            <div className="linkContainer">{this.renderLink()}</div>
           </div>
-          <div className="linkContainer">{this.renderLink()}</div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 

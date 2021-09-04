@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => (
-  <nav className="navbar navbar-dark bg-primary navbar-expand-lg">
+  <nav className="navbar navbar-dark bg-secondary navbar-expand-lg">
     <div className="container-fluid">
       <span className="navbar-brand mb-0 h1">Symmetry</span>
       <div className="collapse navbar-collapse" id="navbarNav">
